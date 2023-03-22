@@ -38,4 +38,4 @@ const createPhotoDescription = () => ({
 
 const createPhotosDescription = () => Array.from({length: 25}, createPhotoDescription);
 
-export {MESSAGES as MESSAGE, NAMES, createPhotosDescription};
+export {MESSAGES, NAMES, createPhotosDescription};

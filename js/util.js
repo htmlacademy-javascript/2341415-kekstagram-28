@@ -1,4 +1,4 @@
-import { MESSAGE, NAMES } from './data.js';
+import { MESSAGES, NAMES } from './data.js';
 
 const getRandomInteger = (a, b) => {
   const min = Math.ceil(Math.min(a, b));
@@ -40,7 +40,7 @@ const getIdPhoto = createOrderIdGenerator();
 const createComment = () => ({
   id: getRandomInteger(1, 1000),
   avatar: `img/avatar-${getRandomInteger(1, 6)}.svg`,
-  message: getRandomArrayElement(MESSAGE),
+  message: getRandomArrayElement(MESSAGES),
   name: getRandomArrayElement(NAMES),
 });
 
