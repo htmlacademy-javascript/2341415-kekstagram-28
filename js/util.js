@@ -14,8 +14,7 @@ function createRandomUnicInteger(min, max) {
 
   return () => {
     if (previousValues.length >= (max - min + 1)) {
-      console.error('Перебраны все числа из диапазона от ' + min + ' до ' + max);
-      return null;
+      throw new Error(`Перебраны все числа из диапазона от ${ min } до ${ max }`);
     }
 
     let currentValue = getRandomInteger(min, max);

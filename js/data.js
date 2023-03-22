@@ -1,6 +1,6 @@
 import { getUrl, getLikes, getIdPhoto, createComment, getRandomArrayElement, getRandomInteger } from './util.js';
 
-const DESCRIPTION = [
+const DESCRIPTIONS = [
   'Бывало и лучше!',
   'Эх, как давно это было...',
   'Замечательное фото!Сразу видно руку профи!',
@@ -8,7 +8,7 @@ const DESCRIPTION = [
   'Мой кот Зимбабве!'
 ];
 
-const MESSAGE = [
+const MESSAGES = [
   'Всё отлично!',
   'В целом всё неплохо. Но не всё.',
   'Когда вы делаете фотографию, хорошо бы убирать палец из кадра. В конце концов это просто непрофессионально.',
@@ -31,12 +31,11 @@ const NAMES = [
 const createPhotoDescription = () => ({
   id: getIdPhoto(),
   url: `photos/${getUrl()}.jpg`,
-  description: getRandomArrayElement(DESCRIPTION),
+  description: getRandomArrayElement(DESCRIPTIONS),
   likes: getLikes(),
   comments:Array.from({length: getRandomInteger(1, 3)}, createComment),
 });
 
 const createPhotosDescription = () => Array.from({length: 25}, createPhotoDescription);
-// console.dir(photos, { depth: 3 });
 
-export {MESSAGE, NAMES, createPhotosDescription};
+export {MESSAGES as MESSAGE, NAMES, createPhotosDescription};
