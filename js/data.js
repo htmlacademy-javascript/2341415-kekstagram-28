@@ -1,4 +1,5 @@
-import { getUrl, getLikes, getIdPhoto, createComment, getRandomArrayElement, getRandomInteger } from './util.js';
+import { getRandomArrayElement, getRandomInteger,createRandomUnicInteger } from './util.js';
+
 
 const DESCRIPTIONS = [
   'Бывало и лучше!',
@@ -27,6 +28,23 @@ const NAMES = [
   'Семен',
   'Петрович'
 ];
+
+const createOrderIdGenerator = (start = 0) => {
+  let count = start;
+  return () => ++count;
+};
+
+const getUrl = createRandomUnicInteger(1, 25);
+const getLikes = createRandomUnicInteger(15, 200);
+const getIdPhoto = createOrderIdGenerator();
+
+const createComment = () => ({
+  id: getRandomInteger(1, 1000),
+  avatar: `img/avatar-${getRandomInteger(1, 6)}.svg`,
+  message: getRandomArrayElement(MESSAGES),
+  name: getRandomArrayElement(NAMES),
+});
+
 
 const createPhotoDescription = () => ({
   id: getIdPhoto(),
