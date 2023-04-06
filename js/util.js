@@ -1,5 +1,3 @@
-import { MESSAGES, NAMES } from './data.js';
-
 const getRandomInteger = (a, b) => {
   const min = Math.ceil(Math.min(a, b));
   const max = Math.floor(Math.max(a, b));
@@ -28,21 +26,4 @@ function createRandomUnicInteger(min, max) {
   };
 }
 
-const createOrderIdGenerator = (start = 0) => {
-  let count = start;
-  return () => ++count;
-};
-
-const getUrl = createRandomUnicInteger(1, 25);
-const getLikes = createRandomUnicInteger(15, 200);
-const getIdPhoto = createOrderIdGenerator();
-
-const createComment = () => ({
-  id: getRandomInteger(1, 1000),
-  avatar: `img/avatar-${getRandomInteger(1, 6)}.svg`,
-  message: getRandomArrayElement(MESSAGES),
-  name: getRandomArrayElement(NAMES),
-});
-
-
-export{ getUrl, getLikes, getIdPhoto, createComment, getRandomInteger, getRandomArrayElement };
+export{ getRandomInteger, getRandomArrayElement, createRandomUnicInteger };
