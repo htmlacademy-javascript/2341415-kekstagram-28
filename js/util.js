@@ -24,6 +24,6 @@ const createRandomUnicInteger = (min, max) => {
     previousValues.push(currentValue);
     return currentValue;
   };
-}
+};
 
 export{ getRandomInteger, getRandomArrayElement, createRandomUnicInteger };
