@@ -7,7 +7,7 @@ const getRandomInteger = (a, b) => {
 
 const getRandomArrayElement = (arr) => arr[getRandomInteger(0, arr.length - 1)];
 
-function createRandomUnicInteger(min, max) {
+const createRandomUnicInteger = (min, max) => {
   const previousValues = [];
 
   return () => {

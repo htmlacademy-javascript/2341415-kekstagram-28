@@ -29,6 +29,8 @@ const NAMES = [
   'Петрович'
 ];
 
+const COUNTS = 25;
+
 const createOrderIdGenerator = (start = 0) => {
   let count = start;
   return () => ++count;
@@ -54,6 +56,6 @@ const createPhotoDescription = () => ({
   comments:Array.from({length: getRandomInteger(1, 3)}, createComment),
 });
 
-const createPhotosDescription = () => Array.from({length: 25}, createPhotoDescription);
+const createPhotosDescription = () => Array.from({length: COUNTS}, createPhotoDescription);
 
 export {MESSAGES, NAMES, createPhotosDescription};
